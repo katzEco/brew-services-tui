@@ -1,4 +1,4 @@
-# !/usr/bin/bash
+#!/usr/bin/bash
 
 echo "==================================================="
 echo "           ${bold}${underline}Homebrew Services Status List${normal}"
