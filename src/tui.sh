@@ -33,9 +33,28 @@ sleep 2 &
 wait
 clear
 
+brewServices() {
+  # brew services list | grep yabai | awk '{ print $2}'
+  echo "==================================================="
+  echo "          ${bold}${underline}Homebrew Services Configuration${normal}"
+  echo ""
+  
+  if [[ $yabaiStatus =~ ^[1]+$ ]]; then 
+    echo "Yabai : $(brew services list | grep yabai | awk '{ print $2}')"
+  fi
+
+  if [[ $skbStatus =~ ^[1]+$ ]]; then
+    echo "SketchyBar : $(brew services list | grep sketchybar | awk '{ print $2}')"
+  fi
+
+  echo ""
+  echo "==================================================="
+}
+
 while [[ ! $options =~ ^[4]+$ ]]; do
   echo "==================================================="
   echo "          ${bold}${underline}Homebrew Services Configuration${normal}"
+  echo ""
 
   if [[ $yabaiStatus =~ ^[1]+$ ]]; then
     echo '1. Yabai'
@@ -50,20 +69,19 @@ while [[ ! $options =~ ^[4]+$ ]]; do
   fi
 
   echo '3. Brew services status'
-
   echo '4. Exit'
-
+  echo ""
   echo "==================================================="
 
   read -p "Enter Your Config : " options
-  echo "${options}"
 
   if [[ $options =~ ^[1]+$ ]]; then
     echo '1'
   elif [[ $options =~ ^[2]+$ ]]; then
     echo '2'
   elif [[ $options =~ ^[3]+$ ]]; then
-    echo '3'
+    clear
+    echo "$(brewServices)"
   elif [[ $options =~ ^[4]+$ ]]; then
     echo ''
     clear
@@ -90,5 +108,3 @@ echo "Service shutting down..."
 sleep 2 &
 wait
 clear
-
-# brew services list | grep yabai | awk '{ print $2}'
