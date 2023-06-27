@@ -64,12 +64,15 @@ while [[ ! $option =~ ^[4]+$ ]]; do
 
   if [[ $option =~ ^[1]+$ ]]; then
     clear
+    # source ./controller/yabaiControl.sh
     source ~/.config/bst/controller/yabaiControl.sh
   elif [[ $option =~ ^[2]+$ ]]; then
     clear
+    # source ./controller/sketchybarControl.sh
     source ~/.config/bst/controller/sketchybarControl.sh
   elif [[ $option =~ ^[3]+$ ]]; then
     clear
+    # source ./controller/homebrewList.sh
     source ~/.config/bst/controller/homebrewList.sh
   elif [[ $option =~ ^[4]+$ ]]; then
     echo ''
