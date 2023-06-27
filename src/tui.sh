@@ -47,6 +47,10 @@ brewServices() {
     echo "SketchyBar : $(brew services list | grep sketchybar | awk '{ print $2}')"
   fi
 
+  if [[ $yabaiStatus =~ ^[0]+$ && $skbStatus =~ ^[0]+$ ]]; then
+    echo "No Services installed.."
+  fi
+
   echo ""
   echo "==================================================="
 }
@@ -68,7 +72,12 @@ while [[ ! $options =~ ^[4]+$ ]]; do
     echo '2. SketchyBar (unavailable)'
   fi
 
-  echo '3. Brew services status'
+  if [[ $yabaiStatus =~ ^[1]+$ && $skbStatus =~ ^[1]+$ ]]; then
+    echo '3. Homebrew services status'
+  else
+    echo '3. Homebrew services status (unavailable)'
+  fi
+  
   echo '4. Exit'
   echo ""
   echo "==================================================="
