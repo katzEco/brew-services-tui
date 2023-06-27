@@ -13,7 +13,11 @@ if [[ $option =~ ^[y]+$ || $option =~ ^[Y]+$ ]]; then
   rm installer.sh
 
   echo alias bst="~/.config/.bst/tui.sh" > ~/.zshrc
+  sleep 1 &
+  wait
   source ~/.zshrc
+  sleep 1 &
+  wait
   clear
   
   echo "bst is installed to your console"
