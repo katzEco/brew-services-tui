@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 bold=$(tput bold)
 underline=$(tput smul)
@@ -33,7 +33,7 @@ sleep 2 &
 wait
 clear
 
-while [[ ! $options =~ ^[4]+$ ]]; do
+while [[ ! $option =~ ^[4]+$ ]]; do
   echo "==================================================="
   echo "          ${bold}${underline}Homebrew Services Configuration${normal}"
   echo ""
@@ -60,26 +60,26 @@ while [[ ! $options =~ ^[4]+$ ]]; do
   echo ""
   echo "==================================================="
 
-  read -p "Enter your option : " options
+  read -p "Enter your option : " option
 
-  if [[ $options =~ ^[1]+$ ]]; then
+  if [[ $option =~ ^[1]+$ ]]; then
     clear
     source ./controller/yabaiControl.sh
-  elif [[ $options =~ ^[2]+$ ]]; then
+  elif [[ $option =~ ^[2]+$ ]]; then
     clear
     source ./controller/sketchybarControl.sh
-  elif [[ $options =~ ^[3]+$ ]]; then
+  elif [[ $option =~ ^[3]+$ ]]; then
     clear
     source ./controller/homebrewList.sh
-  elif [[ $options =~ ^[4]+$ ]]; then
+  elif [[ $option =~ ^[4]+$ ]]; then
     echo ''
     clear
   else
-    clear
+    # clear
     echo 'Unknown option!'
     sleep 5 &
     wait
-    clear
+    # clear
   fi
 done
 
