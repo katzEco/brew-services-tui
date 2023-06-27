@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-while [[ ! $skbOption =~ $[0]+$ ]]; done
+while [[ ! $skbOption =~ $[0]+$ ]]; do
   echo "==================================================="
   echo "             ${bold}${underline}SketchyBar  Configuration${normal}"
   echo ""
