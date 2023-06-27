@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 while [[ ! $yabaiOption =~ ^[0]+$ ]]; do
   echo "==================================================="

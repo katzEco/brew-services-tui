@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env zsh
 
 bold=$(tput bold)
 underline=$(tput smul)

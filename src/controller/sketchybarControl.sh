@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 while [[ ! $skbOption =~ $[0]+$ ]]; done
   echo "==================================================="
