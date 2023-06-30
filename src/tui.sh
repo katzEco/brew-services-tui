@@ -33,16 +33,12 @@ sleep 2 &
 wait
 clear
 
-while [[ ! $option =~ ^[4]+$ ]]; do
+while [[ ! $option =~ ^[0]+$ ]]; do
   echo "==================================================="
   echo "          ${bold}${underline}Homebrew Services Configuration${normal}"
   echo ""
 
-  if [[ $yabaiStatus =~ ^[1]+$ ]]; then
-    echo '1. Yabai'
-  else
-    echo '1. Yabai (unavailable)'
-  fi
+  echo '1. Yabai'
 
   if [[ $skbStatus =~ ^[1]+$ ]]; then
     echo '2. SketchyBar'
@@ -50,13 +46,17 @@ while [[ ! $option =~ ^[4]+$ ]]; do
     echo '2. SketchyBar (unavailable)'
   fi
 
+  echo "3. Ubersicht"
+
   if [[ $yabaiStatus =~ ^[1]+$ && $skbStatus =~ ^[1]+$ ]]; then
-    echo '3. Homebrew services status'
+    echo '4. Homebrew services status'
   else
-    echo '3. Homebrew services status (unavailable)'
+    echo '4. Homebrew services status (unavailable)'
   fi
+
+  echo "5. Mode Presets"
   
-  echo '4. Exit'
+  echo '0. Exit'
   echo ""
   echo "==================================================="
 
@@ -72,17 +72,24 @@ while [[ ! $option =~ ^[4]+$ ]]; do
     source ~/.config/.bst/controller/sketchybarControl.sh
   elif [[ $option =~ ^[3]+$ ]]; then
     clear
+    # source ./controller/ubersicht.sh
+    source ~/.config/.bst/controller/ubersicht.sh
+  elif [[ $option =~ ^[4]+$ ]]; then
+    clear
     # source ./controller/homebrewList.sh
     source ~/.config/.bst/controller/homebrewList.sh
-  elif [[ $option =~ ^[4]+$ ]]; then
+  elif [[ $option =~ ^[5]+$ ]]; then
+    clear
+    # source ./controller/mode.sh
+    source ~/.config/.bst/controller/mode.sh
+  elif [[ $option =~ ^[0]+$ ]]; then
     echo ''
     clear
   else
-    # clear
     echo 'Unknown option!'
-    sleep 5 &
+    sleep 3 &
     wait
-    # clear
+    clear
   fi
 done
 
