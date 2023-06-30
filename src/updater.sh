@@ -12,7 +12,8 @@ if [[ $option =~ ^[y]+$ || $option =~ ^[Y]+$ ]]; then
   rm -rf brew-services-tui
   rm installer.sh
   rm README.md
-  
+
+  clear
   echo "bst is up to dated"
   echo "having fun :)"
 fi
