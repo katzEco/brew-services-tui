@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+echo "Help(?)"
+echo "  [help | h] -> showing you this page :)"
+echo ""
+echo "  [yabai | yb] -> Chaning status of yabai service"
+echo "  [sketchybar | skb] -> Chaning status of sketchybar service"
+echo "  [ubersicht | ub] -> Chaning status of Übersicht service"
+echo "    options:"
+echo "      [start | s] -> turning on that service"
+echo "      [stop | e] -> turning off that service"
+echo "      [restart | r] -> restart that service"
+echo ""
+echo "  [mode | m] -> switching mode of your Übersicht & Sketchybar"
+echo "    options:"
+echo "      [full | f] -> turning on SketchyBar & Übersicht"
+echo "      [minimalx | m] -> turning off SketchyBar"
+echo "      [performance | p] -> turning off SketchyBar & Übersicht"
