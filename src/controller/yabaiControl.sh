@@ -21,7 +21,7 @@ while [[ ! $yabaiOption =~ ^[0]+$ ]]; do
     clear
     echo "==================================================="
     echo ""
-    brew services start yabai
+    yabai --start-service
     echo ""
     echo "==================================================="
     sleep 3 &
@@ -36,7 +36,7 @@ while [[ ! $yabaiOption =~ ^[0]+$ ]]; do
     clear
     echo "==================================================="
     echo ""
-    brew services stop yabai
+    yabai --stop-service
     echo ""
     echo "==================================================="
     sleep 3 &
@@ -51,8 +51,7 @@ while [[ ! $yabaiOption =~ ^[0]+$ ]]; do
     clear
     echo "==================================================="
     echo ""
-    brew services stop yabai
-    brew services start yabai
+    yabai --restart-service
     echo ""
     echo "==================================================="
     sleep 3 &
