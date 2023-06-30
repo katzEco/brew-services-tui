@@ -4,7 +4,7 @@ bold=$(tput bold)
 underline=$(tput smul)
 normal=$(tput sgr0)
 
-HOME_SOURCE="~/.config"
+HOME_SOURCE="$HOME/.config"
 CLI_BASE="${HOME_SOURCE}/cli"
 
 if [[ -z $1 ]]; then
