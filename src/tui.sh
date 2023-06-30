@@ -55,6 +55,8 @@ while [[ ! $option =~ ^[0]+$ ]]; do
   fi
 
   echo "5. Mode Presets"
+
+  echo ""
   
   echo '0. Exit'
   echo ""

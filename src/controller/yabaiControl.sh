@@ -10,6 +10,7 @@ while [[ ! $yabaiOption =~ ^[0]+$ ]]; do
   echo "1. Service start"  
   echo "2. Service stop"
   echo "3. Services Restart"
+  echo ""
   echo "0. Return to Home"
 
   echo ""
