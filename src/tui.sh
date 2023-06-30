@@ -7,17 +7,19 @@ normal=$(tput sgr0)
 HOME_SOURCE="~/.config"
 CLI_BASE="${HOME_SOURCE}/cli"
 
-if [[ -z $1 ]]
-  clear
+echo $1
+
+if [[ -z $1 ]]; then
+  # clear
   echo "Services checking."
   sleep 1 &
   wait
-  clear
+  # clear
 
   echo "Services checking.."
   sleep 1 &
   wait
-  clear
+  # clear
 
   echo "Services checking..."
 
