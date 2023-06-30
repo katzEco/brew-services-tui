@@ -116,14 +116,21 @@ if [[ -z $1 ]]
 else
   source "${CLI_BASE}/function.sh"
 
-  if [[ $1 =~ ^[yabai]+$ ]]; then
+  if [[ $1 =~ ^[yabai]+$ || $1 =~ ^[yb]+$ ]]; then
+    clear
     source "${CLI_BASE}/yabai.sh $(listArg "2" "$@")"
-  elif [[ $1 =~ ^[sketchybar]+$ ]]; then
+  elif [[ $1 =~ ^[sketchybar]+$ || $1 =~ ^[skb]+$ ]]; then
+    clear
     source "${CLI_BASE}/skb.sh $(listArg "2" "$@")"
-  elif [[ $1 =~ ^[uber]+$ ]]; then
+  elif [[ $1 =~ ^[ubersicht]+$ || $1 =~ ^[ub]+$ ]]; then
+    clear
     source "${CLI_BASE}/ubersicht.sh $(listArg "2" "$@")"
-  elif [[ $1 =~ ^[mode]+$ ]]; then
+  elif [[ $1 =~ ^[mode]+$ || $1 =~ ^[m]+$ ]]; then
+    clear
     source "${CLI_BASE}/mode.sh $(listArg "2" "$@")"
+  elif [[ $1 =~ ^[help]+$ || $1 =~ ^[h]+$ ]]; then
+    clear
+    source "${CLI_BASE}/help.sh"
   else
     clear
     echo "We don't have that arguments."
