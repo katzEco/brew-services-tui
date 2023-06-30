@@ -2,7 +2,7 @@
 
 while [[ ! $modeOption =~ $[0]+$ ]]; do
   echo "==================================================="
-  echo "             ${bold}${underline}SketchyBar  Configuration${normal}"
+  echo "                ${bold}${underline}Mode  Configuration${normal}"
   echo ""
 
   echo "1. Full Mode"
