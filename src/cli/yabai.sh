@@ -4,26 +4,27 @@ if [[ -z $1 ]]; then
   echo "Error: No Command Found.."
   echo "Try Again Later.."
 else
-  if [[ $1 =~ ^[start]+$ || $1 =~ ^[s]+$ ]]; then
+  if [[ $1 =~ ^(start|s)$ ]]; then
     yabai --start-service
-    clear
-    sleep 1 &
+    echo $1
+    # clear
+    sleep 1
     echo "Yabai Service started!"
     wait
-  elif [[ $1 =~ ^[stop]+$ || $1 =~ ^[e]+$ ]]; then
+  elif [[ $1 =~ ^(stop|e)$ ]]; then
     yabai --stop-service
-    clear
-    sleep 1 &
+    # clear
+    sleep 1
     echo "Yabai Service stopped!"
     wait
-  elif [[ $1 =~ ^[restart]+$ || $1 =~ ^[r]+$ ]]; then
+  elif [[ $1 =~ ^(restart|r)$ ]]; then
     yabai --restart-service
-    clear
-    sleep 1 &
+    # clear
+    sleep 1
     echo "Yabai Service restarted!"
     wait
   else
-    clear
+    # clear
     echo "Error: Argument Not Found.."
   fi
 fi

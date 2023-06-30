@@ -4,29 +4,27 @@ if [[ -z $1 ]]; then
   echo "Error: No Command Found.."
   echo "Try Again Later.."
 else
-  if [[ $1 =~ ^[full]+$ || $1 =~ ^[f]+$ ]]; then
+  if [[ $1 =~ ^(full|f)$ ]]; then
     brew services start sketchybar
-    open /Applications/Übersicht.app
-    clear
-    sleep 1 &
+    open -a "Übersicht"
+    # clear
+    sleep 1
     echo "Full Mode ON!"
-    wait
-  elif [[ $1 =~ ^[minimalx]+$ || $1 =~ ^[m]+$ ]]; then
+  elif [[ $1 =~ ^(minimalx|m)$ ]]; then
     brew services stop sketchybar
-    open /Applications/Übersicht.app
-    clear
-    sleep 1 &
+    open -a "Übersicht"
+    # clear
+    sleep 1
     echo "MinimalX Mode ON!"
-    wait
-  elif [[ $1 =~ ^[performance]+$ || $1 =~ ^[p]+$ ]]; then
+  elif [[ $1 =~ ^(performance|p)$ ]]; then
     brew services stop sketchybar
-    kill $(ps aux | grep "/Applications/Übersicht.app/Contents/MacOS/Übersicht" | awk '{print $2}')
-    clear
-    sleep 1 &
+    pids=$(pgrep -f "/Applications/Übersicht.app/Contents/MacOS/Übersicht")
+    kill $pids
+    # clear
+    sleep 1
     echo "Performance Mode ON!"
-    wait
   else
-    clear
+    # clear
     echo "Error: Argument Not Found.."
   fi
 fi
