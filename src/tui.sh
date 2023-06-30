@@ -4,7 +4,7 @@ bold=$(tput bold)
 underline=$(tput smul)
 normal=$(tput sgr0)
 
-HOME_SOURCE="$HOME/.config"
+HOME_SOURCE="$HOME/.config/.bst"
 CLI_BASE="${HOME_SOURCE}/cli"
 
 if [[ -z $1 ]]; then
@@ -131,6 +131,9 @@ else
   elif [[ $1 =~ ^[help]+$ || $1 =~ ^[h]+$ ]]; then
     clear
     source "${CLI_BASE}/help.sh"
+  elif [[ $1 =~ ^[update]+$ ]]; then
+    clear
+    source "${HOME_SOURCE}/updater.sh"
   else
     clear
     echo "We don't have that arguments."
